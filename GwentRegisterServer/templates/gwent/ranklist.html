@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users' ranking on this server</title>
+</head>
+<body>
+{% if infomation %}<p><strong>{{ infomation }}</strong></p>{% endif %}
+<table border="2">
+    <th>ranks</th>
+    <th>user names</th>
+    <th>ratings</th>
+    {% for user in userlist %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.rating }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
